@@ -1,3 +1,4 @@
+var count=0;
 function addBoll() {
   var boll = document.createElement("div");
   boll.setAttribute("class", "boll");
@@ -11,10 +12,18 @@ function addBoll() {
   document.body.appendChild(boll);
   }
 function pop(element) {
+  count++;
   document.body.removeChild(element);
 }
 function start() {
     setInterval(addBoll, 1000);
+    var p = parseInt(document.getElementById("pontos").innerHTML);
+    p+=1;
+    document.getElementById("pontos").innerHTML = p;
+    if (p > 20) {
+      alert ("VC GANHOU");
+      window.location.href = window.location.href;
+  }
 }
 
 // gera uma cor aleatória em hexadecimal
